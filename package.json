@@ -10,6 +10,8 @@
     "postinstall": "ts-patch install",
     "prepare": "ts-patch install -s",
     "test": "CI=true VITEST_SEGFAULT_RETRY=3 yarn workspaces foreach --parallel run test",
+    "build:turbo": "turbo build",
+    "build:packages": "turbo run build --filter=./packages/*",
     "build": "run build:clean && run build:ts && yarn workspace next-contentlayer2 run prepack",
     "build:ts": "tsc --build tsconfig.all.json",
     "dev:ts": "run build:ts --watch",
@@ -37,7 +39,8 @@
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "prettier": "^3.2.5",
     "ts-patch": "^2.1.0",
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "turbo": "^2.0.14"
   },
   "resolutions": {
     "esbuild": "0.23.0",
@@ -47,5 +50,5 @@
     "next-contentlayer2": "workspace:*",
     "rxjs": "^7.1.0"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "pnpm@8.15.8+sha512.d1a029e1a447ad90bc96cd58b0fad486d2993d531856396f7babf2d83eb1823bb83c5a3d0fc18f675b2d10321d49eb161fece36fe8134aa5823ecd215feed392"
 }
